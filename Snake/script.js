@@ -2,21 +2,19 @@ window.onload = function(){
     const canvasWidth = 900;
     const canvasHeight = 600;
     const blockSize = 30;
-    const ctx;
-    const delay = 100;
-    const xCoord = 0;
-    const yCoord = 0;
-    const snakee;
-    const applee; 
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');;
     const widthInBlocks = canvasWidth/blockSize;
     const heightInBlocks = canvasHeight/blockSize;
-    const score;
-    const timeOut;
+    let delay = 100;
+    let snakee;
+    let applee; 
+    let score;
+    let timeOut;
     
     init();
     
     function init(){
-        const canvas = document.createElement('canvas');
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
         canvas.style.border = "30px solid gray";
@@ -24,7 +22,6 @@ window.onload = function(){
         canvas.style.display = "block";
         canvas.style.backgroundColor = "#ddd";
         document.body.appendChild(canvas);
-        ctx = canvas.getContext('2d');
         snakee = new Snake([[6,4],[5,4],[4,4],[3,4],[2,4]],"right");
         applee = new Apple([10,10]);
         score = 0;
